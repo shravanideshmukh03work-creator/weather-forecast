@@ -1,0 +1,73 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    controllerName="wf.weather.controller.weatherf" 
+    displayBlock="true">
+    
+    <Page showHeader="false" class="weatherPage">
+        <content>
+            <VBox alignItems="Center" class="sapUiMediumMargin">
+                
+                <HBox width="100%" justifyContent="Center" class="sapUiLargeMarginBottom">
+                    <Input id="cityInput" placeholder="Enter City Name..." width="100%" maxWidth="500px" />
+                    <Button icon="sap-icon://search" press="onGetWeather" type="Emphasized" class="sapUiTinyMarginBegin"/>
+                </HBox>
+
+                <VBox alignItems="Center" class="sapUiLargeMarginBottom">
+                    <Title text="{weatherModel>/current/city}" class="cityTitle" />
+                    <Text text="{weatherModel>/current/emoji}" class="mainEmoji" />
+                    <Title text="{weatherModel>/current/temp}°C" titleStyle="H1" class="mainTemp" />
+                    <Text text="{weatherModel>/current/condition}" class="conditionText" />
+                </VBox>
+
+                <VBox width="100%" maxWidth="900px" class="glassCard sapUiMediumMarginBottom">
+                    <Title text="5-DAY FORECAST" class="sapUiSmallMargin sectionTitle" />
+                    <ScrollContainer horizontal="true" vertical="false" width="100%">
+                        <HBox items="{path: 'weatherModel>/forecast'}" class="sapUiSmallMargin">
+                            <VBox alignItems="Center" class="forecastItem">
+                                <Text text="{weatherModel>day}" class="forecastDay" />
+                                <Text text="{weatherModel>emoji}" class="forecastEmoji" />
+                                <Text text="{weatherModel>high}°" class="forecastTemp" />
+                            </VBox>
+                        </HBox>
+                    </ScrollContainer>
+                </VBox>
+
+                <l:Grid containerQuery="true" defaultSpan="L4 M4 S12" width="100%" maxWidth="900px">
+                    <l:content>
+                        <VBox class="glassCardSmall wideCard">
+                            <HBox alignItems="Center">
+                                <core:Icon src="sap-icon://visibility" size="1.2rem" color="#4A90E2" class="sapUiTinyMarginEnd" />
+                                <Text text="VISIBILITY" class="metricLabel" />
+                            </HBox>
+                            <Title text="{weatherModel>/current/visibility} km" class="metricValue" />
+                            <Text text="Perfectly clear view" class="metricSubText" />
+                        </VBox>
+
+                        <VBox class="glassCardSmall wideCard">
+                            <HBox alignItems="Center">
+                                <core:Icon src="sap-icon://temperature" size="1.2rem" color="#4A90E2" class="sapUiTinyMarginEnd" />
+                                <Text text="HUMIDITY" class="metricLabel" />
+                            </HBox>
+                            <Title text="{weatherModel>/current/humidity}%" class="metricValue" />
+                            <Text text="Dew point is 13° right now" class="metricSubText" />
+                        </VBox>
+
+                        <VBox class="glassCardSmall wideCard">
+                            <HBox alignItems="Center">
+                                <core:Icon src="sap-icon://light-cloud" size="1.2rem" color="#4A90E2" class="sapUiTinyMarginEnd" />
+                                <Text text="UV INDEX" class="metricLabel" />
+                            </HBox>
+                            <Title text="{weatherModel>/current/uvIndex}" class="metricValue" />
+                            <Text text="Use sun protection" class="metricSubText" />
+                        </VBox>
+                    </l:content>
+                </l:Grid>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
