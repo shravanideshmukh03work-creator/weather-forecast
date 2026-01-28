@@ -1,0 +1,37 @@
+/* Background Light Blue */
+.weatherPage .sapMPageScroll {
+    background: linear-gradient(to bottom, #B3E5FC 0%, #81D4FA 100%) !important;
+}
+
+/* Wide Cards Layout */
+.glassCard {
+    background: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glassCardSmall {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/* Wide Metric Card Spacing */
+.wideCard {
+    min-height: 140px;
+}
+
+/* Typography */
+.cityTitle { font-size: 2.2rem !important; color: #263238 !important; }
+.mainEmoji { font-size: 4.5rem; }
+.mainTemp { font-size: 3.5rem !important; color: #263238 !important; font-weight: 300 !important; }
+
+.forecastItem { padding: 0 20px; min-width: 85px; text-align: center; }
+.forecastEmoji { font-size: 2rem; margin: 8px 0; }
+.forecastTemp { font-weight: bold; color: #37474F; }
+
+.metricLabel { font-size: 0.75rem; font-weight: bold; color: #546E7A; letter-spacing: 1px; }
+.metricValue { font-size: 1.8rem !important; font-weight: bold !important; color: #263238 !important; margin: 10px 0 !important; }
+.metricSubText { font-size: 0.8rem; color: #455A64; }

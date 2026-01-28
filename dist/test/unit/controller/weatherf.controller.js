@@ -1,0 +1,2 @@
+sap.ui.define(["wf/weather/controller/weatherf.controller"],function(e){"use strict";QUnit.module("weatherf Controller");QUnit.test("I should test the weatherf controller",function(t){var n=new e;n.onInit();t.ok(n)})});
+//# sourceMappingURL=weatherf.controller.js.map
